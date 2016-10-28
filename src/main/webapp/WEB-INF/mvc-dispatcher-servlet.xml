@@ -24,7 +24,7 @@
   <bean id="thymeleafTemplateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
     <property name="prefix" value="/WEB-INF/thymeleaf/"/>
     <property name="suffix" value=".html"/>
-    <property name="templateMode" value="HTML"/>
+    <property name="templateMode" value="HTML5"/>
     <property name="characterEncoding" value="UTF-8"/>
     <property name="cacheable" value="true"/>
   </bean>
@@ -32,7 +32,6 @@
   <!-- THYMELEAF: Template Engine (Spring3-specific version) -->
   <bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
     <property name="templateResolver" ref="thymeleafTemplateResolver"/>
-    <property name="enableSpringELCompiler" value="true" />
     <property name="additionalDialects">
         <set>
             <bean class="nz.net.ultraq.thymeleaf.LayoutDialect" />
