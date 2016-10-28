@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="includes :: head(~{::link})">
-  <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.0.1/css/bootstrap.min.css}"/>
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.0.1/css/bootstrap.min.css}" />
 </head>
 <body>
-	<div class="container">
+    <div class="container">
         <div th:replace="includes :: pageHeader"></div>
-        <div class="panel panel-default"  th:each="item : ${presentations}">
-            <div class="panel-heading">
-                <h3 class="panel-title" th:text="${item.title} +' - '+ ${item.speakerName}">Title - Speakername</h3>
-            </div>
-            <div class="panel-body" th:utext="${item.summary}">Summary</div>
-        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>SpeakerName</th>
+                    <th>Summary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item : ${presentations}">
+                    <td>
+                        <span th:if="${item.id % 2 == 0}">*</span>
+                        <span th:text="${item.id}" />
+                    </td>
+                    <td><span th:text="${item.title}" /></td>
+                    <td><span th:text="${item.speakerName}" /></td>
+                    <td><span th:utext="${item.summary}" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <div th:replace="includes :: pageFooter"></div>
     </div>
     <script th:src="@{/webjars/jquery/2.0.2/jquery.min.js}" th:replace="includes :: scripts"></script>
     <script th:remove="all" type="text/javascript" th:src="@{/static/js/thymol.js}"></script>

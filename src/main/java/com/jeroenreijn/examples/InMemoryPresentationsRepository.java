@@ -1,5 +1,6 @@
 package com.jeroenreijn.examples;
 
+import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicLong;
@@ -87,7 +88,7 @@ public class InMemoryPresentationsRepository implements PresentationsRepository 
     }
 
     @Override
-    public Iterable<Presentation> findAll() {
+    public Collection<Presentation> findAll() {
         return this.presentations.values();
     }
 

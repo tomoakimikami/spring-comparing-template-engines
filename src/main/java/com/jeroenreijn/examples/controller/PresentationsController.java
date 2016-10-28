@@ -18,7 +18,7 @@ public class PresentationsController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String home(final ModelMap modelMap) {
-        return showList("jsp", modelMap);
+        return showList("thymeleaf", modelMap);
     }
 
     @RequestMapping(value = "{template}", method = RequestMethod.GET)
