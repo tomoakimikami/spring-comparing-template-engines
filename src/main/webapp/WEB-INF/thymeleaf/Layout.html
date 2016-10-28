@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Layout page</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<script th:src="@{/webjars/jquery/2.0.2/jquery.min.js}" ></script>
+<script th:remove="all" type="text/javascript" th:src="@{/static/js/thymol.js}"></script>
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.0.1/css/bootstrap.min.css}" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Compare Template Engine</h1>
+            <div layout:fragment="custom-header" />
+        </header>
+        <section layout:fragment="content">
+            <p>Page content goes here</p>
+        </section>
+        <footer>
+            <div layout:fragment="custom-footer" />
+            <p>Copyright SPR All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
