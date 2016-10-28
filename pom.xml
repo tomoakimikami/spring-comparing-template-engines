@@ -11,15 +11,15 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <tomcat.version>7.0.53</tomcat.version>
     <javax.servlet-api.version>3.0.1</javax.servlet-api.version>
-    <spring.version>4.1.6.RELEASE</spring.version>
+    <spring.version>4.3.3.RELEASE</spring.version>
     <jquery.version>2.0.2</jquery.version>
 
     <!-- Template engine versions -->
     <freemarker.version>2.3.22</freemarker.version>
-    <thymeleaf.version>2.1.4.RELEASE</thymeleaf.version>
-    <thymeleaf-spring4.version>2.1.4.RELEASE</thymeleaf-spring4.version>
-    <thymeleaf-extras-conditionalcomments.version>2.1.4.RELEASE</thymeleaf-extras-conditionalcomments.version>
-    <thymeleaf-extras-springsecurity3.version>2.1.4.RELEASE</thymeleaf-extras-springsecurity3.version>
+    <thymeleaf.version>3.0.2.RELEASE</thymeleaf.version>
+    <thymeleaf-spring4.version>3.0.2.RELEASE</thymeleaf-spring4.version>
+    <thymeleaf-extras-conditionalcomments.version>2.1.2.RELEASE</thymeleaf-extras-conditionalcomments.version>
+    <thymeleaf-extras-springsecurity4.version>3.0.0.RELEASE</thymeleaf-extras-springsecurity4.version>
     <velocity.version>1.7</velocity.version>
     <mustache-spring.version>1.1.1</mustache-spring.version>
     <scalate-core_2.10.version>1.7.1</scalate-core_2.10.version>
@@ -193,7 +193,7 @@
       <artifactId>handlebars-springmvc</artifactId>
       <version>${handlebars.version}</version>
     </dependency>
-    
+
     <dependency>
       <groupId>com.lyncode</groupId>
       <artifactId>jtwig-spring</artifactId>
