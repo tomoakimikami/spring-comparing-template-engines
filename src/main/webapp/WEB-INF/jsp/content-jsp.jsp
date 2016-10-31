@@ -2,20 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<meta charset=utf-8 />
-<meta name=viewport content="width=device-width, initial-scale=1.0" />
-<meta http-equiv=X-UA-Compatible content="IE=Edge" />
-<title>JSP</title>
-<link rel="stylesheet" href="<c:url value='/webjars/bootstrap/3.0.1/css/bootstrap.min.css' />" media="screen" />
-<script src="<c:url value='/webjars/jquery/2.0.2/jquery.min.js' />"></script>
-<script src="<c:url value='/webjars/bootstrap/3.0.1/js/bootstrap.min.js '/>"></script>
+<title>JSP/JSTL</title>
+<c:import url="head.jsp" />
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Compare Template Engine</h1>
-            <h2>JSP</h2>
-            <hr />
+            <c:import url="header.jsp" charEncoding="UTF-8" />
         </header>
         <section class="content">
             <table class="table table-striped">
@@ -43,9 +36,7 @@
             </table>
         </section>
         <footer>
-            <hr />
-            <h2>JSP/Tiles3</h2>
-            <p>Copyright SPR All Rights Reserved.</p>
+            <c:import url="footer.jsp" charEncoding="UTF-8" />
         </footer>
     </div>
 </body>
