@@ -14,7 +14,7 @@
     * 列アイテムに4つぐらいプロパティを持つJavaBeanを使う
     * ループ処理の中にIF判定を入れる
     * レイアウト処理
-        * Thymeleaf: [thymeleaf-layout-dialect](https://github.com/ultraq/thymeleaf-layout-dialect)
+        * Thymeleaf: [Fragment Expressions](http://enterprisegeeks.hatenablog.com/entry/2016/05/25/152437)
         * JSP: JSTLの[c:import](http://struts.wasureppoi.com/jstl/02_import.html)
     * ヘッダー/コンテンツボディ/フッターの3要素で構成
 4. javax.servlet.Filterで時間計測する
