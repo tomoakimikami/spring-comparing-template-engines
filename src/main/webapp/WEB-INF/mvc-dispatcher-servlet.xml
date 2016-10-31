@@ -33,11 +33,6 @@
   <bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
     <property name="templateResolver" ref="thymeleafTemplateResolver"/>
     <property name="enableSpringELCompiler" value="true" />
-    <property name="additionalDialects">
-        <set>
-            <bean class="nz.net.ultraq.thymeleaf.LayoutDialect" />
-        </set>
-    </property>
   </bean>
 
   <!-- THYMELEAF: View Resolver - implementation of Spring's ViewResolver interface -->
