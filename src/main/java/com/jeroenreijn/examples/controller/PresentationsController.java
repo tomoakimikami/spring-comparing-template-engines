@@ -22,7 +22,7 @@ public class PresentationsController {
 
   @RequestMapping(value = "", method = RequestMethod.GET)
   public String home(final ModelMap modelMap) {
-    return showList("thymeleaf", modelMap);
+    return showList("jsp", modelMap);
   }
 
   @RequestMapping(value = "{template}", method = RequestMethod.GET)
