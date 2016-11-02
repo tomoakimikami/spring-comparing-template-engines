@@ -35,3 +35,12 @@ fork元とは既にまったく別のものになっています。
     * Controller部分は誤差の範囲内だと思うので問題なし
     * ミリ秒で良いと思う。ナノ秒までの正確さは不要かと。
     * コード的にはこんな感じ
+
+```java
+final long begin = System.currentTimeMillis();
+try {
+  chain.doFilter(request, response);
+} finally {
+  log.info("diff:{}", System.currentTimeMillis()-begin);
+}
+```
