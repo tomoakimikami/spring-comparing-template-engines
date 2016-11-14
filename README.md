@@ -12,10 +12,12 @@ fork元とは既にまったく別のものになっています。
     * Thymeleafのキャッシュは有効にする
 3. Viewレイヤーは、よく使われる要素を1画面に盛り込む
     * 100件のループアイテム表示処理
-        * Thymeleaf: th:each
+        * Thymeleaf: [th:each](http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf_ja.html#繰り返し処理)
         * JSP: JSTLの[c:forEach](http://struts.wasureppoi.com/jstl/02_foreach.html)
     * 列アイテムに4つぐらいプロパティを持つJavaBeanを使う
     * ループ処理の中にIF判定を入れる
+        * Thymeleaf: [th:if](http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf_ja.html#単純な条件-if-と-unless)
+        * JSP:JSTLの[c:if](http://struts.wasureppoi.com/jstl/02_if.html)
     * レイアウト処理
         * JSP: [Apache Tiles](https://tiles.apache.org/)
         * Thymeleaf: [thymeleaf-layout-dialect](https://github.com/ultraq/thymeleaf-layout-dialect)
