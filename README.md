@@ -8,8 +8,8 @@ fork元とは既にまったく別のものになっています。
     * Controllerのみ。なにもDIしない
     * ループ表示用のListは、static final等であらかじめメモリに持っておく
 2. 設定は本番向け設定
-    * JSPのプレコンパイルは行わない
-    * Thymeleafのキャッシュは有効にする
+    * JSPの[プレコンパイル](http://www.confrage.com/tomcat/jsp/jsp_precompile/jsp_precompile.html)は行わない
+    * Thymeleafの[キャッシュ](http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf_ja.html#テンプレートキャッシュ)は有効にする
 3. Viewレイヤーは、よく使われる要素を1画面に盛り込む
     * 100件のループアイテム表示処理
         * Thymeleaf: [th:each](http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf_ja.html#繰り返し処理)
