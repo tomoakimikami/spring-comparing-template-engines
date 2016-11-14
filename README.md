@@ -17,8 +17,9 @@ fork元とは既にまったく別のものになっています。
     * 列アイテムに4つぐらいプロパティを持つJavaBeanを使う
     * ループ処理の中にIF判定を入れる
     * レイアウト処理
-        * Thymeleaf: [thymeleaf-layout-dialect](https://github.com/ultraq/thymeleaf-layout-dialect)
         * JSP: [Apache Tiles](https://tiles.apache.org/)
+        * Thymeleaf: [thymeleaf-layout-dialect](https://github.com/ultraq/thymeleaf-layout-dialect)
+        * Thymeleaf: [flagment expressions](http://enterprisegeeks.hatenablog.com/entry/2016/05/25/152437)
     * ヘッダー/コンテンツボディ/フッターの3要素で構成
 4. javax.servlet.Filterで時間計測する
     * ブラウザ側だと通信時間がノイズになるため
@@ -68,6 +69,14 @@ git checkout thymeleaf-3-fragment
 
 ```bash
 mvn tomcat7:run
+```
+
+### 確認
+
+以下のURLへアクセスします。
+
+```
+http://localhost:8080
 ```
 
 ## 実行結果
