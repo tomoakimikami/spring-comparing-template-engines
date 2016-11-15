@@ -1,5 +1,6 @@
 package com.jeroenreijn.examples.controller;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
@@ -8,28 +9,55 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jeroenreijn.examples.model.Presentation;
 
 @Controller
-@RequestMapping("/")
+@SessionAttributes(types = { Presentation.class })
 public class PresentationsController {
   private static AtomicLong counter = new AtomicLong();
   private ConcurrentMap<Long, Presentation> presentations = new ConcurrentHashMap<Long, Presentation>();
 
-  @RequestMapping(value = "", method = RequestMethod.GET)
-  public String home(final ModelMap modelMap) {
-    return showList("thymeleaf", modelMap);
+  @ModelAttribute("presentation")
+  public Presentation setupModel() {
+    return new Presentation();
   }
 
-  @RequestMapping(value = "{template}", method = RequestMethod.GET)
-  public String showList(@PathVariable(value = "template") final String template,
-      final ModelMap model) {
-    model.addAttribute("presentations", findAll());
-    return "content-" + template;
+  @RequestMapping(value = "/", method = RequestMethod.GET)
+  public String home(RedirectAttributes attributes) {
+    return "redirect:/showList";
+  }
+
+  @RequestMapping(value = "/showList", method = RequestMethod.GET)
+  public String showList(final ModelMap modelMap) {
+    modelMap.addAttribute("presentations", findAll());
+    return "showList-thymeleaf";
+  }
+
+  @RequestMapping(value = "/showForm", method = RequestMethod.GET)
+  public String showForm(final ModelMap modelMap, Presentation presentation) {
+    presentation.setRoom("room");
+    presentation.setSpeakerName("Speaker");
+    presentation.setSummary("summary");
+    presentation.setTitle("Title");
+    presentation.setStartTime(LocalDate.now());
+    presentation.setEndTime(LocalDate.now());
+    return "showForm-thymeleaf";
+  }
+
+  @RequestMapping(value = "/showConfirm", method = RequestMethod.POST)
+  public String showConfirm(Presentation presentation) {
+    return "showConfirm-thymeleaf";
+  }
+
+  @RequestMapping(value = "/complete", method = RequestMethod.POST)
+  public String complete(RedirectAttributes attributes) {
+    return "redirect:/showList";
   }
 
   private List<Presentation> findAll() {

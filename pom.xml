@@ -17,12 +17,13 @@
         <!-- Template engine versions -->
         <thymeleaf.version>2.1.4.RELEASE</thymeleaf.version>
         <thymeleaf-spring4.version>2.1.4.RELEASE</thymeleaf-spring4.version>
+        <thymeleaf-extras-java8time.version>2.1.0.RELEASE</thymeleaf-extras-java8time.version>
     </properties>
 
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
-        <version>7</version>
+        <version>9</version>
     </parent>
 
     <dependencies>
@@ -88,6 +89,12 @@
             <groupId>nz.net.ultraq.thymeleaf</groupId>
             <artifactId>thymeleaf-layout-dialect</artifactId>
             <version>1.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-java8time</artifactId>
+            <version>${thymeleaf-extras-java8time.version}</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>

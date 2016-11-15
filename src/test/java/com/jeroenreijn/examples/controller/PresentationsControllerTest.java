@@ -19,14 +19,14 @@ public class PresentationsControllerTest {
 
   @Test
   public void should_return_jsp_view() throws Exception {
-    final String view = controller.home(modelMap);
+    final String view = controller.home(null);
     assertEquals("index-jsp", view);
   }
 
   @Test
   public void should_return_other_view() throws Exception {
-    final String view = controller.showList("test", modelMap);
-    assertEquals("index-test", view);
+    final String view = controller.showList(modelMap);
+    assertEquals("showList-thymeleaf", view);
   }
 
 }
