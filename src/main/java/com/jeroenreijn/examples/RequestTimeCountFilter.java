@@ -18,7 +18,7 @@ public class RequestTimeCountFilter extends OncePerRequestFilter {
     try {
       filterChain.doFilter(request, response);
     } finally {
-      logger.info(String.format("diff:%d ms", System.currentTimeMillis() - begin));
+      logger.info(String.format("diff:%d ms, uri:%s", System.currentTimeMillis() - begin, request.getRequestURI()));
     }
   }
 

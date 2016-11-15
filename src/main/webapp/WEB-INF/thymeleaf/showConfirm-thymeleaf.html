@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="include::head(~{::title})">
+<meta charset="utf-8" />
+<title>Thymeleaf 3</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div th:replace="~{include :: header}" />
+            <h2>Thymeleaf 3</h2>
+            <hr />
+        </header>
+        <section>
+            <div class="row">
+                <form class="form-horizontal" action="/complete" th:action="@{/complete}" th:object="${presentation}" method="post">
+                    <!-- ID -->
+                    <div class="form-group">
+                        <div class="col-md-2">
+                            <!-- ラベル -->
+                            <label class="control-label" for="id"> ID </label>
+                        </div>
+                        <div class="col-md-10">
+                            <!-- コントロール -->
+                            <p class="form-control-static" th:text="*{id}"></p>
+                        </div>
+                    </div>
+
+                    <!-- タイトル -->
+                    <div class="form-group" th:classappend="${#fields.hasErrors('title')}? has-error">
+                        <div class="col-md-2">
+                            <!-- ラベル -->
+                            <label class="control-label" for="title">タイトル </label>
+                        </div>
+                        <div class="col-md-10">
+                            <!-- コントロール -->
+                            <p class="form-control-static" th:text="*{title}"></p>
+                        </div>
+                    </div>
+
+                    <!-- スピーカー -->
+                    <div class="form-group" th:classappend="${#fields.hasErrors('speakerName')}? has-error">
+                        <div class="col-md-2">
+                            <!-- ラベル -->
+                            <label class="control-label" for="speakerName">スピーカー </label>
+                        </div>
+                        <div class="col-md-10">
+                            <!-- コントロール -->
+                            <p class="form-control-static" th:text="*{speakerName}"></p>
+                        </div>
+                    </div>
+
+                    <!-- サマリー -->
+                    <div class="form-group" th:classappend="${#fields.hasErrors('summary')}? has-error">
+                        <div class="col-md-2">
+                            <!-- ラベル -->
+                            <label class="control-label" for="summary"> サマリー </label>
+                        </div>
+                        <div class="col-md-10">
+                            <!-- コントロール -->
+                            <p class="form-control-static" th:text="*{summary}"></p>
+                        </div>
+                    </div>
+
+                    <!-- ルーム -->
+                    <div class="form-group" th:classappend="${#fields.hasErrors('room')}? has-error">
+                        <div class="col-md-2">
+                            <!-- ラベル -->
+                            <label class="control-label" for="room"> ルーム </label>
+                        </div>
+                        <div class="col-md-10">
+                            <!-- コントロール -->
+                            <p class="form-control-static" th:text="*{room}"></p>
+                        </div>
+                    </div>
+
+                    <!-- 開始日付 -->
+                    <div class="form-group" th:classappend="${#fields.hasErrors('startTime')}? has-error">
+                        <div class="col-md-2">
+                            <!-- ラベル -->
+                            <label class="control-label" for="startTime">開始日付 </label>
+                        </div>
+                        <div class="col-md-10">
+                            <!-- コントロール -->
+                            <div th:if="${presentation.startTime}">
+                                <p class="form-control-static" th:text="${#temporals.format(presentation.startTime, 'yyyy/MM/dd')}"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 終了日付 -->
+                    <div class="form-group" th:classappend="${#fields.hasErrors('endTime')}? has-error">
+                        <div class="col-md-2">
+                            <!-- ラベル -->
+                            <label class="control-label" for="endTime">終了日付 </label>
+                        </div>
+                        <div class="col-md-10">
+                            <!-- コントロール -->
+                            <div th:if="${presentation.endTime}">
+                                <p class="form-control-static" th:text="${#temporals.format(presentation.endTime, 'yyyy/MM/dd')}"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 操作ボタン -->
+                    <div class="row">
+                        <div class="col-md-offset-10 col-md-2">
+                            <button class="btn btn-primary" type="submit">登録</button>
+                            <a class="btn btn-default" href="/showList" th:href="@{/showList}">戻る</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <hr />
+            <h2>Thymeleaf 3</h2>
+            <div th:replace="~{include :: footer}"></div>
+        </footer>
+    </div>
+</body>
+</html>
