@@ -1,6 +1,9 @@
 package com.jeroenreijn.examples.model;
 
-import java.util.Date;
+import java.time.LocalDate;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 /**
  * Simple representation of a Presentation
@@ -13,8 +16,11 @@ public class Presentation {
     private String speakerName;
     private String summary;
     private String room;
-    private Date startTime;
-    private Date endTime;
+    @DateTimeFormat(iso = ISO.DATE)
+    private LocalDate startTime;
+
+    @DateTimeFormat(iso = ISO.DATE)
+    private LocalDate endTime;
 
     public Long getId() {
         return id;
@@ -56,19 +62,19 @@ public class Presentation {
         this.room = room;
     }
 
-    public Date getStartTime() {
+    public LocalDate getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(final Date startTime) {
+    public void setStartTime(final LocalDate startTime) {
         this.startTime = startTime;
     }
 
-    public Date getEndTime() {
+    public LocalDate getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(final Date endTime) {
+    public void setEndTime(final LocalDate endTime) {
         this.endTime = endTime;
     }
 }

@@ -13,13 +13,12 @@
         <javax.servlet-api.version>3.0.1</javax.servlet-api.version>
         <spring.version>4.3.3.RELEASE</spring.version>
         <jquery.version>2.0.2</jquery.version>
-        <tiles.version>3.0.7</tiles.version>
     </properties>
 
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
-        <version>7</version>
+        <version>9</version>
     </parent>
 
     <dependencies>
