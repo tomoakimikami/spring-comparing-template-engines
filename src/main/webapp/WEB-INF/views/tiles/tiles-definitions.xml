@@ -13,9 +13,21 @@
    </definition>
 
    <!-- Home Page -->
-   <definition name="content-jsp" extends="base-definition">
+   <definition name="showList-jsp" extends="base-definition">
        <put-attribute name="title" value="JSP/Tiles3" />
-       <put-attribute name="content" value="/WEB-INF/views/pages/content-jsp.jsp" />
+       <put-attribute name="content" value="/WEB-INF/views/pages/showList-jsp.jsp" />
+   </definition>
+
+   <!-- Form Page -->
+   <definition name="showForm-jsp" extends="base-definition">
+       <put-attribute name="title" value="JSP/Tiles3" />
+       <put-attribute name="content" value="/WEB-INF/views/pages/showForm-jsp.jsp" />
+   </definition>
+
+   <!-- Confirm Page -->
+   <definition name="showConfirm-jsp" extends="base-definition">
+       <put-attribute name="title" value="JSP/Tiles3" />
+       <put-attribute name="content" value="/WEB-INF/views/pages/showConfirm-jsp.jsp" />
    </definition>
 
 </tiles-definitions>
