@@ -42,8 +42,8 @@ try {
 
 |ブランチ|概要|
 |-------|------|
-|jsp|JSPおよびJSTLを使用|
-|jsp-tiles3|JSPおよびApache Tiles3を使用|
+|jsp|JSP2.2およびJSTL1.2を使用|
+|jsp-tiles3|JSP2.2およびApache Tiles3を使用|
 |thymeleaf-2|Thymeleaf2およびThymeleaf Layout Dialectを使用|
 |thymeleaf-3|Thymeleaf3およびThymeleaf Layout Dialectを使用|
 |thymeleaf-3-fragment|Thymeleaf3およびFragment Expressionsを使用|
